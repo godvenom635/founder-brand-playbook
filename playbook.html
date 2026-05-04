@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Founder Brand Playbook — @smmguy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&family=Anton&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --blue:#1d4ed8;
+    --deep-blue:#0b2a6b;
+    --blue-soft:#eff4ff;
+    --blue-line:#c7d6f7;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --soft-bg:#fafafa;
+    --warn:#dc2626;
+    --warn-soft:#fee2e2;
+    --amber:#ea7c1c;
+    --good:#16a34a;
+  }
+
+  @page { size: 8.5in 11in; margin: 0; }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{
+    background:#fff;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    font-size:13px;
+    line-height:1.45;
+  }
+  a{color:inherit; text-decoration:none;}
+
+  .page{
+    width:8.5in;
+    height:11in;
+    background:#fff;
+    position:relative;
+    page-break-after:always;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .page:last-child{page-break-after:auto;}
+
+  .top-bar{
+    background:var(--deep-blue);
+    color:#fff;
+    padding:14px 36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:0.18em;
+    flex-shrink:0;
+  }
+  .top-bar .pill{opacity:.92;}
+
+  .bottom-bar{
+    margin-top:auto;
+    background:var(--soft-bg);
+    border-top:1px solid var(--border);
+    padding:16px;
+    text-align:center;
+    color:var(--blue);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.22em;
+    flex-shrink:0;
+  }
+  .bottom-bar a{color:var(--blue);}
+
+  .body{
+    flex:1;
+    padding:36px 46px 22px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  /* Typography */
+  .serif{font-family:'DM Serif Display',serif; font-weight:400;}
+  .serif-i{font-family:'DM Serif Display',serif; font-style:italic; font-weight:400;}
+  .display{font-family:'Anton',sans-serif; letter-spacing:-0.02em;}
+  .script{font-family:'Caveat',cursive; font-weight:500;}
+  .blue{color:var(--blue);}
+  .muted{color:var(--muted);}
+
+  /* shared blocks */
+  .section-label{
+    font-weight:800; letter-spacing:0.16em; font-size:11px;
+    color:var(--ink); display:flex; align-items:center; gap:8px;
+  }
+  .section-label::before{
+    content:""; width:8px; height:8px; background:var(--blue); border-radius:50%;
+  }
+
+  /* ============== PAGE 1 — COVER ============== */
+  .cover-hero-line{
+    text-align:center;
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:38px;
+    line-height:1.05;
+    margin-top:8px;
+  }
+  .cover-display{
+    font-family:'Anton',sans-serif;
+    font-size:122px;
+    line-height:.92;
+    text-align:center;
+    letter-spacing:-0.02em;
+    margin-top:4px;
+  }
+  .cover-tag{
+    text-align:center;
+    margin-top:16px;
+    font-family:'Caveat',cursive;
+    font-size:24px;
+    color:var(--muted);
+  }
+  .cover-tag a{color:var(--blue);}
+  .cover-pos{
+    text-align:center;
+    margin-top:18px;
+    font-size:14px;
+    color:var(--ink);
+    max-width:560px;
+    margin-left:auto; margin-right:auto;
+    line-height:1.5;
+  }
+  .cover-pos b{font-weight:800;}
+  .cover-pos .accent{color:var(--blue); font-weight:800;}
+
+  /* Mechanism graphic */
+  .mechanism{
+    margin-top:22px;
+    background:var(--blue-soft);
+    border:1px solid var(--blue-line);
+    border-radius:14px;
+    padding:18px 18px 14px;
+  }
+  .mech-label{
+    font-weight:800; font-size:11px; letter-spacing:0.18em;
+    color:var(--blue); text-align:center; margin-bottom:14px;
+  }
+  .mech-row{
+    display:grid;
+    grid-template-columns:1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr;
+    align-items:center;
+    gap:4px;
+  }
+  .mech-node{
+    text-align:center;
+    background:#fff;
+    border:1.5px solid var(--blue-line);
+    border-radius:12px;
+    padding:10px 6px 8px;
+  }
+  .mech-node.mech-final{
+    background:var(--ink);
+    border-color:var(--ink);
+  }
+  .mech-node.mech-final .mech-name{color:#fff;}
+  .mech-node.mech-final .mech-sub{color:#9aa4b6;}
+  .mech-icon{
+    height:36px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mech-name{
+    font-weight:900; font-size:12px; letter-spacing:0.10em;
+    margin-top:4px; color:var(--ink);
+  }
+  .mech-sub{
+    font-family:'Caveat',cursive; font-size:14px;
+    color:var(--muted); margin-top:1px;
+  }
+  .mech-arrow{
+    display:flex; align-items:center; justify-content:center;
+  }
+  .mech-loop{
+    margin-top:6px;
+    position:relative;
+    text-align:center;
+  }
+  .mech-loop-label{
+    font-family:'Caveat',cursive;
+    font-size:14px;
+    color:var(--blue);
+    margin-top:-4px;
+  }
+  .mech-loop-label b{font-weight:700;}
+
+  .cover-toc{
+    margin-top:auto;
+    border-top:1px solid var(--border);
+    padding-top:14px;
+  }
+  .cover-toc .h{
+    font-weight:800; font-size:12px; letter-spacing:0.18em; margin-bottom:14px; color:var(--ink);
+  }
+  .cover-toc .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 32px;
+  }
+  .cover-toc .row{
+    display:grid;
+    grid-template-columns:38px 1fr 28px;
+    align-items:center;
+    border-bottom:1px dashed var(--border);
+    padding:7px 0;
+    font-weight:700;
+    font-size:12.5px;
+  }
+  .cover-toc .row .n{color:var(--blue); font-weight:900;}
+  .cover-toc .row .t{letter-spacing:0.04em;}
+  .cover-toc .row .p{color:var(--muted); text-align:right; font-size:11px;}
+
+  /* ============== Generic Page Headers ============== */
+  .page-eyebrow{
+    font-family:'Caveat',cursive;
+    color:var(--blue);
+    font-size:22px;
+    margin-bottom:-2px;
+  }
+  .page-title{
+    font-family:'Anton',sans-serif;
+    font-size:74px;
+    line-height:.95;
+    letter-spacing:-0.01em;
+  }
+  .page-sub{
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+    font-size:22px;
+    margin-top:6px;
+    color:var(--ink);
+  }
+  .page-sub .accent{color:var(--blue);}
+
+  /* ============== 4-quadrant card grid ============== */
+  .quad{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .qcard{
+    background:var(--blue-soft);
+    border:1px solid var(--blue-line);
+    border-radius:14px;
+    padding:18px 20px;
+  }
+  .qcard .num{
+    font-family:'Anton',sans-serif;
+    font-size:32px;
+    color:var(--blue);
+    line-height:1;
+  }
+  .qcard h3{
+    font-weight:900; font-size:16px; letter-spacing:0.04em;
+    margin-top:6px; color:var(--ink);
+  }
+  .qcard p{
+    margin-top:6px;
+    font-size:12.5px;
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .qcard p b{font-weight:800;}
+
+  .punchline{
+    margin-top:20px;
+    background:var(--ink);
+    color:#fff;
+    padding:18px 22px;
+    border-radius:12px;
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+    font-size:18px;
+    line-height:1.4;
+  }
+  .punchline .blue-text{color:#7aa3ff;}
+
+  /* ============== Framework / formula card ============== */
+  .formula-card{
+    margin-top:16px;
+    background:var(--blue-soft);
+    border:1px solid var(--blue-line);
+    border-radius:14px;
+    padding:22px 26px;
+  }
+  .formula-card .h{
+    font-weight:800; font-size:13px; letter-spacing:0.16em; color:var(--blue);
+  }
+  .formula{
+    margin-top:10px;
+    font-family:'DM Serif Display',serif;
+    font-style:italic;
+    font-size:22px;
+    line-height:1.35;
+  }
+  .formula .slot{
+    background:#fff;
+    border:1.5px solid var(--blue);
+    color:var(--blue);
+    padding:1px 10px;
+    border-radius:6px;
+    font-style:normal;
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:0.04em;
+  }
+
+  .examples{
+    margin-top:14px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .ex{
+    border-left:3px solid var(--blue);
+    padding:6px 12px;
+    background:#fff;
+    font-size:12.5px;
+    border-radius:0 8px 8px 0;
+    border:1px solid var(--border);
+    border-left:3px solid var(--blue);
+  }
+  .ex b{font-weight:800;}
+
+  /* ============== Numbered list value blocks ============== */
+  .vblocks{
+    margin-top:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 18px;
+  }
+  .vblock{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px 16px;
+    background:#fff;
+  }
+  .vblock .top{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:6px;
+  }
+  .vblock .num{
+    background:var(--blue); color:#fff; font-weight:900;
+    width:24px; height:24px; border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:13px;
+  }
+  .vblock .name{font-weight:800; font-size:14px;}
+  .vblock p{font-size:12px; line-height:1.5; color:var(--ink);}
+  .vblock p b{font-weight:800;}
+
+  /* ============== 2-column compare ============== */
+  .compare{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .compare .col{
+    border:1px solid var(--blue-line);
+    border-radius:14px;
+    padding:18px 20px;
+    background:var(--blue-soft);
+  }
+  .compare .col h4{
+    font-weight:900;
+    color:var(--blue);
+    font-size:13px;
+    letter-spacing:0.18em;
+    margin-bottom:10px;
+  }
+  .compare .col ul{list-style:none; padding:0;}
+  .compare .col li{
+    position:relative; padding-left:18px;
+    font-size:12.5px; line-height:1.5; margin-bottom:7px;
+  }
+  .compare .col li::before{
+    content:"›"; position:absolute; left:0; top:-1px; color:var(--blue); font-weight:900;
+  }
+  .compare .col li b{font-weight:800;}
+
+  /* Bottom note */
+  .note{
+    margin-top:14px;
+    background:var(--ink);
+    color:#fff;
+    border-radius:10px;
+    padding:14px 18px;
+    font-size:13px;
+    line-height:1.5;
+  }
+  .note b{color:#7aa3ff;}
+
+  /* Posting cadence rows */
+  .rows{margin-top:12px;}
+  .row-item{
+    display:grid;
+    grid-template-columns:60px 1fr;
+    gap:14px;
+    padding:11px 0;
+    border-bottom:1px solid var(--border);
+    align-items:flex-start;
+  }
+  .row-item:last-child{border-bottom:0;}
+  .row-item .tag{
+    background:var(--blue);
+    color:#fff;
+    font-weight:800;
+    font-size:11px;
+    letter-spacing:0.05em;
+    padding:4px 6px;
+    border-radius:6px;
+    text-align:center;
+  }
+  .row-item .body-r{font-size:12.5px; line-height:1.5;}
+  .row-item .body-r b{font-weight:800;}
+
+  /* Checklists */
+  .check-list{
+    margin-top:10px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+  }
+  .check{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:12.5px;
+    border:1px solid var(--border);
+    padding:9px 12px;
+    border-radius:8px;
+  }
+  .check .box{
+    width:14px; height:14px;
+    border:1.5px solid var(--blue);
+    border-radius:3px;
+    flex-shrink:0;
+    margin-top:2px;
+  }
+  .check b{font-weight:800;}
+
+  /* funnel pyramid */
+  .funnel{
+    margin-top:16px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+  .funnel .layer{
+    color:#fff;
+    background:var(--blue);
+    text-align:center;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:800;
+    font-size:13px;
+    letter-spacing:0.06em;
+  }
+  .funnel .l1{width:96%;}
+  .funnel .l2{width:78%; background:#3b6ce0;}
+  .funnel .l3{width:60%; background:#5d8aef;}
+  .funnel .l4{width:42%; background:var(--ink);}
+  .funnel .layer .sub{
+    display:block;
+    font-weight:500;
+    font-size:11px;
+    opacity:.85;
+    margin-top:2px;
+    letter-spacing:0.04em;
+  }
+
+  /* 3-column timeline */
+  .timeline-3{
+    margin-top:14px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+  }
+  .tl-card{
+    border:1px solid var(--blue-line);
+    background:var(--blue-soft);
+    border-radius:14px;
+    padding:14px 16px;
+  }
+  .tl-card .hd{
+    font-family:'Anton',sans-serif;
+    font-size:24px;
+    color:var(--blue);
+    line-height:1;
+  }
+  .tl-card .name{
+    font-weight:900; font-size:13px; letter-spacing:0.12em;
+    margin-top:4px; color:var(--ink);
+  }
+  .tl-card ul{list-style:none; padding:0; margin-top:10px;}
+  .tl-card li{
+    font-size:11.5px; line-height:1.45;
+    padding-left:14px; position:relative;
+    margin-bottom:5px;
+  }
+  .tl-card li::before{
+    content:""; position:absolute; left:0; top:6px;
+    width:5px; height:5px; background:var(--blue); border-radius:50%;
+  }
+  .tl-card .goal{
+    margin-top:10px; padding-top:10px;
+    border-top:1px dashed var(--blue-line);
+    font-weight:800; font-size:12px; color:var(--ink);
+  }
+  .tl-card .goal .accent{color:var(--blue);}
+
+  /* CTA button */
+  .cta-btn{
+    margin:18px auto 0;
+    display:block;
+    text-align:center;
+    background:var(--blue);
+    color:#fff;
+    font-weight:800;
+    letter-spacing:0.18em;
+    font-size:15px;
+    padding:18px 40px;
+    border-radius:8px;
+    width:fit-content;
+  }
+  .cta-btn .small{
+    display:block; font-size:10px; opacity:.85;
+    font-weight:600; letter-spacing:0.18em; margin-top:4px;
+  }
+
+  /* clone-roles */
+  .roles{
+    margin-top:14px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  .role{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+  .role .top{display:flex; align-items:center; gap:10px;}
+  .role .num{
+    background:var(--ink); color:#fff;
+    font-family:'Anton',sans-serif; font-size:18px;
+    width:30px; height:30px; border-radius:6px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .role .name{font-weight:900; font-size:13px; letter-spacing:0.06em;}
+  .role p{font-size:11.5px; margin-top:6px; line-height:1.45;}
+
+  .stages-line{
+    margin-top:14px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:10px;
+  }
+  .stages-line .s{
+    border:1px solid var(--blue-line);
+    background:var(--blue-soft);
+    border-radius:10px;
+    padding:10px 12px;
+    font-size:11.5px;
+    line-height:1.4;
+  }
+  .stages-line .s b{font-weight:900; color:var(--blue); display:block; margin-bottom:2px; letter-spacing:0.06em;}
+
+</style>
+</head>
+<body>
+
+<!-- ============================ PAGE 1 — COVER ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 1</div><div class="pill">THE 2026 EDITION</div></div>
+  <div class="body">
+    <div class="cover-hero-line">The Founder-led Personal Brand</div>
+    <div class="cover-display">PLAYBOOK</div>
+    <div class="cover-tag">a 2026 field guide · by <a href="https://instagram.com/smmguy">@smmguy</a></div>
+
+    <div class="cover-pos">
+      How founders build a personal brand in 2026 — and turn their face into <span class="accent">their business's cheapest distribution channel.</span> No fluff. No theory. The exact system.
+    </div>
+
+    <div class="mechanism">
+      <div class="mech-label">THE MECHANISM</div>
+      <div class="mech-row">
+        <div class="mech-node">
+          <div class="mech-icon">
+            <svg viewBox="0 0 40 40" width="34" height="34"><circle cx="20" cy="14" r="7" fill="none" stroke="#1d4ed8" stroke-width="2.2"/><path d="M7 34c2-7 8-10 13-10s11 3 13 10" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="mech-name">YOU</div>
+          <div class="mech-sub">the founder</div>
+        </div>
+        <div class="mech-arrow">
+          <svg viewBox="0 0 80 14" width="100%" height="14" preserveAspectRatio="none"><line x1="0" y1="7" x2="72" y2="7" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 4"/><polyline points="66,2 74,7 66,12" fill="none" stroke="#1d4ed8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="mech-node">
+          <div class="mech-icon">
+            <svg viewBox="0 0 40 40" width="34" height="34"><rect x="6" y="11" width="22" height="18" rx="2.5" fill="none" stroke="#1d4ed8" stroke-width="2.2"/><polygon points="28,17 36,12 36,28 28,23" fill="#1d4ed8"/><circle cx="13" cy="20" r="2.2" fill="#1d4ed8"/></svg>
+          </div>
+          <div class="mech-name">CONTENT</div>
+          <div class="mech-sub">your face, daily</div>
+        </div>
+        <div class="mech-arrow">
+          <svg viewBox="0 0 80 14" width="100%" height="14" preserveAspectRatio="none"><line x1="0" y1="7" x2="72" y2="7" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 4"/><polyline points="66,2 74,7 66,12" fill="none" stroke="#1d4ed8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="mech-node">
+          <div class="mech-icon">
+            <svg viewBox="0 0 40 40" width="34" height="34"><circle cx="13" cy="15" r="5" fill="none" stroke="#1d4ed8" stroke-width="2.2"/><circle cx="27" cy="15" r="5" fill="none" stroke="#1d4ed8" stroke-width="2.2"/><circle cx="20" cy="13" r="5" fill="#1d4ed8"/><path d="M3 33c1.5-5 5-7.5 10-7.5s8.5 2.5 10 7.5" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round"/><path d="M17 33c1.5-5 5-7.5 10-7.5s8.5 2.5 10 7.5" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="mech-name">AUDIENCE</div>
+          <div class="mech-sub">trust compounds</div>
+        </div>
+        <div class="mech-arrow">
+          <svg viewBox="0 0 80 14" width="100%" height="14" preserveAspectRatio="none"><line x1="0" y1="7" x2="72" y2="7" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 4"/><polyline points="66,2 74,7 66,12" fill="none" stroke="#1d4ed8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="mech-node mech-final">
+          <div class="mech-icon">
+            <svg viewBox="0 0 40 40" width="34" height="34"><polyline points="6,30 16,20 22,25 34,10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="28,10 34,10 34,16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="mech-name">BUSINESS</div>
+          <div class="mech-sub">inbound revenue</div>
+        </div>
+      </div>
+      <div class="mech-loop">
+        <svg viewBox="0 0 600 26" width="100%" height="26" preserveAspectRatio="none">
+          <path d="M 560 4 Q 560 22 300 22 Q 40 22 40 4" fill="none" stroke="#1d4ed8" stroke-width="1.4" stroke-dasharray="3 4"/>
+          <polyline points="44,-1 38,5 46,9" fill="none" stroke="#1d4ed8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="mech-loop-label">compounds back into <b>more content fuel</b></div>
+      </div>
+    </div>
+
+    <div class="cover-toc">
+      <div class="h">INSIDE THIS PLAYBOOK</div>
+      <div class="grid">
+        <div class="row"><span class="n">01</span><span class="t">THE 2026 THESIS</span><span class="p">P.2</span></div>
+        <div class="row"><span class="n">06</span><span class="t">DISTRIBUTION</span><span class="p">P.7</span></div>
+        <div class="row"><span class="n">02</span><span class="t">POSITIONING</span><span class="p">P.3</span></div>
+        <div class="row"><span class="n">07</span><span class="t">CLONE YOURSELF</span><span class="p">P.8</span></div>
+        <div class="row"><span class="n">03</span><span class="t">IDEATION</span><span class="p">P.4</span></div>
+        <div class="row"><span class="n">08</span><span class="t">THE FUNNEL</span><span class="p">P.9</span></div>
+        <div class="row"><span class="n">04</span><span class="t">SCRIPTING</span><span class="p">P.5</span></div>
+        <div class="row"><span class="n">09</span><span class="t">0 → 10K IN 90 DAYS</span><span class="p">P.10</span></div>
+        <div class="row"><span class="n">05</span><span class="t">FILMING + EDITING</span><span class="p">P.6</span></div>
+        <div class="row"><span class="n">→</span><span class="t">DM ME "PLAYBOOK"</span><span class="p">P.10</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 2 — THE 2026 THESIS ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 2 · CHAPTER 01</div><div class="pill">THE 2026 THESIS</div></div>
+  <div class="body">
+    <div class="page-eyebrow">why now</div>
+    <div class="page-title">DISTRIBUTION IS<br>THE NEW MOAT.</div>
+    <div class="page-sub">Your <span class="accent">face</span> is the cheapest channel you'll ever have.</div>
+
+    <div class="quad">
+      <div class="qcard">
+        <div class="num">01</div>
+        <h3>AI BROKE "EXPERTISE" AS A MOAT.</h3>
+        <p>Anyone can spin up a clone of your service in a weekend. The only thing AI cannot copy is <b>you, on camera, building in public.</b> Your face is now a defensible asset — your skills are not.</p>
+      </div>
+      <div class="qcard">
+        <div class="num">02</div>
+        <h3>PAID IS THE MOST EXPENSIVE IT'S EVER BEEN.</h3>
+        <p>CPMs are up 4x in 3 years. The founders winning right now are the ones whose audience already trusts them <b>before the ad ever runs.</b> Personal brand is the cheapest CAC line on your P&amp;L.</p>
+      </div>
+      <div class="qcard">
+        <div class="num">03</div>
+        <h3>INBOUND BEATS OUTBOUND, ALWAYS.</h3>
+        <p>One founder with 5K real followers gets more qualified inbound in a week than a 5-person SDR team doing cold outreach in a month. Inbound clients close 3x faster and pay 2x more.</p>
+      </div>
+      <div class="qcard">
+        <div class="num">04</div>
+        <h3>TRUST TRANSFERS TO PRICE.</h3>
+        <p>When you sell from trust, your offer doesn't compete on price. People will pay <b>3-5x more</b> to work with someone they already follow than the equivalent unknown vendor. Personal brand is a margin lever, not a vanity project.</p>
+      </div>
+    </div>
+
+    <div class="punchline">
+      In 2026, the founders without a face will <span class="blue-text">pay strangers to find them.</span><br>
+      The founders with one will be <span class="blue-text">paid by strangers to find them.</span>
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 3 — POSITIONING ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 3 · CHAPTER 02</div><div class="pill">POSITIONING</div></div>
+  <div class="body">
+    <div class="page-eyebrow">step one of everything</div>
+    <div class="page-title">PICK A BELIEF,<br>NOT A NICHE.</div>
+    <div class="page-sub">Niches make you <span class="accent">findable</span>. Beliefs make you <span class="accent">followable</span>.</div>
+
+    <div class="formula-card">
+      <div class="h">THE FOUNDER POSITIONING STATEMENT</div>
+      <div class="formula">
+        I help <span class="slot">WHO</span> go from <span class="slot">PAINFUL STATE</span> to <span class="slot">DREAM OUTCOME</span> using <span class="slot">UNIQUE MECHANISM</span> — and I believe <span class="slot">CONTRARIAN BELIEF</span>.
+      </div>
+    </div>
+
+    <div class="examples">
+      <div class="ex"><b>Founder A:</b> I help bootstrapped SaaS founders go from $0 → $10K MRR using <b>founder-led content</b> — and I believe paid ads kill more startups than they save.</div>
+      <div class="ex"><b>Founder B:</b> I help D2C brands go from 6 → 7 figures using <b>founder origin videos</b> — and I believe agencies are the worst place to learn marketing.</div>
+      <div class="ex"><b>Founder C:</b> I help service businesses replace cold outreach with inbound DMs — and I believe sales teams are a $1M+ revenue problem, not a $0–$1M one.</div>
+    </div>
+
+    <div class="vblocks" style="margin-top:18px;">
+      <div class="vblock"><div class="top"><div class="num">1</div><div class="name">The 1-line stranger test</div></div><p>Can a stranger explain what you do <b>in one sentence</b> after watching one of your videos? If not, you're not positioned — you're posting.</p></div>
+      <div class="vblock"><div class="top"><div class="num">2</div><div class="name">The DM mirror test</div></div><p>Do followers DM you with the <b>exact problem you said you solve?</b> If your DMs are random, your positioning is random.</p></div>
+      <div class="vblock"><div class="top"><div class="num">3</div><div class="name">The "no" test</div></div><p>Are you turning down clients who don't fit? Founders with sharp positioning say <b>no more than yes</b>. That's the moat.</p></div>
+      <div class="vblock"><div class="top"><div class="num">4</div><div class="name">The disagreement test</div></div><p>Could 3 people in your niche publicly <b>disagree with your belief?</b> If not, you don't have a belief — you have a description.</p></div>
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 4 — IDEATION ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 4 · CHAPTER 03</div><div class="pill">IDEATION</div></div>
+  <div class="body">
+    <div class="page-eyebrow">never run out of ideas</div>
+    <div class="page-title">THE 5 BUCKETS.</div>
+    <div class="page-sub">Every founder content idea comes from one of <span class="accent">these five places.</span></div>
+
+    <div class="vblocks" style="margin-top:18px; grid-template-columns:1fr 1fr;">
+      <div class="vblock"><div class="top"><div class="num">1</div><div class="name">CONTRARIAN</div></div><p>Things you believe nobody else in your space is saying. Most founders are too scared to publish these — that's exactly why they work. <b>One contrarian post = 100 safe posts.</b></p></div>
+      <div class="vblock"><div class="top"><div class="num">2</div><div class="name">LESSONS</div></div><p>Things you wish someone told you 12 months ago. Frame them as: "If I started over today, here's what I'd do differently." Easy to write, instantly relatable, perfect for hooks.</p></div>
+      <div class="vblock"><div class="top"><div class="num">3</div><div class="name">PROCESS</div></div><p>Things you do every day that look obvious to you but are <b>magic to your audience.</b> The "how I do X in 10 mins" video. Founders underestimate how valuable their boring routines are.</p></div>
+      <div class="vblock"><div class="top"><div class="num">4</div><div class="name">OBJECTIONS</div></div><p>Things prospects say on sales calls — every "why I'm hesitant" objection is a video. Your sales calls are the cheapest market research you'll ever do. <b>Record them. Mine them.</b></p></div>
+      <div class="vblock"><div class="top"><div class="num">5</div><div class="name">COMMENTARY</div></div><p>Things in the news in your industry. React, disagree, predict. You don't need to be the source — being the smart filter is enough to be followed.</p></div>
+      <div class="vblock" style="background:var(--ink); color:#fff; border:0;">
+        <div class="top"><div class="num" style="background:#7aa3ff; color:var(--ink);">★</div><div class="name" style="color:#fff;">THE 1 → 20 RULE</div></div>
+        <p style="color:#fff; opacity:.95;">One real conversation = 20 pieces of content. If you can't pull 20 ideas out of a single sales call, podcast, or DM thread — <b style="color:#7aa3ff;">you're not paying attention.</b></p>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:18px;">WHERE TO CAPTURE IDEAS</div>
+    <div class="rows" style="margin-top:6px;">
+      <div class="row-item"><div class="tag">DAILY</div><div class="body-r"><b>Voice memo after every sales call.</b> 60 seconds. What did they push back on? What did they get excited about? That's tomorrow's video.</div></div>
+      <div class="row-item"><div class="tag">DAILY</div><div class="body-r"><b>One Notes file called "IDEAS".</b> Add to it as you scroll. Don't categorize. Don't perfect. Just dump.</div></div>
+      <div class="row-item"><div class="tag">WEEKLY</div><div class="body-r"><b>10-min "what surprised me" prompt.</b> Open a doc, set a 10-min timer, write what surprised you this week. 70% of those become posts.</div></div>
+      <div class="row-item"><div class="tag">WEEKLY</div><div class="body-r"><b>Mine your DMs.</b> Every question = a video. If 3 people asked it, 3,000 are wondering it.</div></div>
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 5 — SCRIPTING ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 5 · CHAPTER 04</div><div class="pill">SCRIPTING</div></div>
+  <div class="body">
+    <div class="page-eyebrow">how to write a video that holds</div>
+    <div class="page-title">HOOK → TENSION<br>→ PAYOFF.</div>
+    <div class="page-sub">Every viral founder script. <span class="accent">Three parts. That's it.</span></div>
+
+    <div class="formula-card">
+      <div class="h">THE FOUNDER SCRIPT FRAMEWORK</div>
+      <div class="formula" style="font-size:18px; line-height:1.5;">
+        <b style="font-family:Inter; font-weight:900; color:var(--blue);">HOOK</b> <span style="font-family:Inter; font-style:normal; font-size:13px; color:var(--muted);">(0–3s)</span> a claim, a contrarian line, or a sharp pain — must land in &lt;1 second on screen.<br>
+        <b style="font-family:Inter; font-weight:900; color:var(--blue);">TENSION</b> <span style="font-family:Inter; font-style:normal; font-size:13px; color:var(--muted);">(3–8s)</span> "here's why most founders get this wrong" — name the enemy.<br>
+        <b style="font-family:Inter; font-weight:900; color:var(--blue);">PAYOFF</b> <span style="font-family:Inter; font-style:normal; font-size:13px; color:var(--muted);">(8–40s)</span> the actual answer. Specific. One idea. Not three.<br>
+        <b style="font-family:Inter; font-weight:900; color:var(--blue);">CTA</b> <span style="font-family:Inter; font-style:normal; font-size:13px; color:var(--muted);">(last 5s)</span> save / share / DM keyword. Always one ask, never two.
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:16px;">3 HOOK FORMULAS THAT NEVER MISS</div>
+    <div class="vblocks" style="grid-template-columns:1fr 1fr 1fr; margin-top:8px;">
+      <div class="vblock">
+        <div class="top"><div class="num">A</div><div class="name">"I USED TO…"</div></div>
+        <p><i>"I used to think hiring SDRs was the answer. Then I tried this for 90 days…"</i> Confession + curiosity = unstoppable open.</p>
+      </div>
+      <div class="vblock">
+        <div class="top"><div class="num">B</div><div class="name">"STOP DOING X"</div></div>
+        <p><i>"Stop hiring social media managers. Hire one editor and become the brand yourself."</i> Direct. Authoritative. Polarizing.</p>
+      </div>
+      <div class="vblock">
+        <div class="top"><div class="num">C</div><div class="name">"SPECIFIC NUMBER"</div></div>
+        <p><i>"We hit $400K in 6 months from one tactic everyone in our space ignores."</i> Specifics signal proof. Numbers stop the scroll.</p>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:16px;">RULES I FOLLOW EVERY TIME</div>
+    <div class="check-list" style="margin-top:8px;">
+      <div class="check"><div class="box"></div><div><b>One idea per video.</b> Never two. The second one becomes its own video.</div></div>
+      <div class="check"><div class="box"></div><div><b>No intros.</b> Don't say "hey guys." Start with the hook on frame 1.</div></div>
+      <div class="check"><div class="box"></div><div><b>Read it out loud 3 times before you film.</b> If it sounds written, rewrite it. Founders sound like founders, not blog posts.</div></div>
+      <div class="check"><div class="box"></div><div><b>30–90 seconds is the sweet spot</b> for founder content. Long enough to teach. Short enough to finish.</div></div>
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 6 — FILMING + EDITING ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 6 · CHAPTER 05</div><div class="pill">FILMING + EDITING</div></div>
+  <div class="body">
+    <div class="page-eyebrow">production is leverage, not vanity</div>
+    <div class="page-title">YOUR PHONE<br>IS ENOUGH.</div>
+    <div class="page-sub">The founders winning on IG <span class="accent">don't out-produce.</span> They out-ship.</div>
+
+    <div class="compare">
+      <div class="col">
+        <h4>FILMING — THE SETUP</h4>
+        <ul>
+          <li><b>Phone</b> (iPhone 13 or up). Yes, just your phone. Stop buying gear.</li>
+          <li><b>Natural light</b> facing a window. Mid-morning is the cheat code.</li>
+          <li><b>Tripod</b> at chest height — eye-level, never up your nose.</li>
+          <li><b>Lavalier mic</b> ($30 wired or $80 wireless). Audio is non-negotiable. People forgive bad video, never bad audio.</li>
+          <li><b>Plain background.</b> No clutter. No moving shadows.</li>
+          <li><b>Film 5–10 takes</b> per video. Pick the one where you sound most like yourself, not the most "polished" one.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>EDITING — THE 80/20</h4>
+        <ul>
+          <li><b>Tools:</b> CapCut (free, mobile) or Descript (desktop, AI-cuts). Skip Premiere until you're at 50K+ followers.</li>
+          <li><b>Cut every silence &gt; 0.5 seconds.</b> Pace = retention.</li>
+          <li><b>Subtitles always</b> — 35% of viewers watch on mute.</li>
+          <li><b>B-roll every 3–5 seconds</b> for retention. Phone footage of your screen, your office, your team.</li>
+          <li><b>One zoom-in</b> on the most important sentence. Just one.</li>
+          <li><b>Hook lands in &lt;1 sec</b> after trim. Trim ruthlessly from the front.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>The 30-min rule:</b> if a 60-second video takes more than 30 minutes to edit, your editor (or you) is overcooking it. Cut, caption, ship. Founder content wins on volume + speed, not finish.
+    </div>
+
+    <div class="section-label" style="margin-top:18px;">YOUR WEEKLY FILM DAY</div>
+    <div class="rows">
+      <div class="row-item"><div class="tag">SUN</div><div class="body-r"><b>Block 90 minutes.</b> Same time every week. Treat it like an investor meeting — not a "when I have time" task.</div></div>
+      <div class="row-item"><div class="tag">SUN</div><div class="body-r"><b>Film 5 videos in one go.</b> Same shirt. Same setup. Different angles + cuts make them feel different. Don't film alone all week — batch.</div></div>
+      <div class="row-item"><div class="tag">MON</div><div class="body-r"><b>Hand off raw footage</b> to your editor by 10am. They edit M–W. You schedule Thursday. You ship Friday onwards.</div></div>
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 7 — DISTRIBUTION ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 7 · CHAPTER 06</div><div class="pill">DISTRIBUTION</div></div>
+  <div class="body">
+    <div class="page-eyebrow">posting more isn't growth</div>
+    <div class="page-title">POSTING SMARTER<br>IS.</div>
+    <div class="page-sub">Most founders post and ghost. Then blame the algorithm. <span class="accent">It's not the algo.</span></div>
+
+    <div class="formula-card">
+      <div class="h">THE 5 · 3 · 1 WEEKLY RHYTHM</div>
+      <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+        <div style="background:#fff; border-radius:10px; padding:14px; border:1px solid var(--blue-line);">
+          <div style="font-family:Anton; font-size:48px; color:var(--blue); line-height:1;">5</div>
+          <div style="font-weight:900; font-size:12px; letter-spacing:0.10em; margin-top:4px;">SHORT-FORM / WEEK</div>
+          <p style="font-size:11.5px; margin-top:6px; line-height:1.45;">Reels, Shorts, TikTok — the discovery layer. Volume matters here.</p>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:14px; border:1px solid var(--blue-line);">
+          <div style="font-family:Anton; font-size:48px; color:var(--blue); line-height:1;">3</div>
+          <div style="font-weight:900; font-size:12px; letter-spacing:0.10em; margin-top:4px;">REPURPOSED / WEEK</div>
+          <p style="font-size:11.5px; margin-top:6px; line-height:1.45;">Top 3 reels → LinkedIn, X, YouTube Shorts. Same content. New room.</p>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:14px; border:1px solid var(--blue-line);">
+          <div style="font-family:Anton; font-size:48px; color:var(--blue); line-height:1;">1</div>
+          <div style="font-weight:900; font-size:12px; letter-spacing:0.10em; margin-top:4px;">LONG-FORM / WEEK</div>
+          <p style="font-size:11.5px; margin-top:6px; line-height:1.45;">Podcast clip, full talk, blog, or carousel. Builds depth + trust.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:16px;">THE 4 RULES NOBODY FOLLOWS</div>
+    <div class="vblocks" style="margin-top:8px;">
+      <div class="vblock"><div class="top"><div class="num">1</div><div class="name">Don't post and ghost.</div></div><p>Reply to <b>every comment in the first 60 minutes</b>. The algorithm scores early engagement velocity 10x more than late.</p></div>
+      <div class="vblock"><div class="top"><div class="num">2</div><div class="name">Re-share old wins.</div></div><p>A reel that hit 100K six months ago will hit again with a fresh hook. <b>Founders waste their best assets</b> by posting once.</p></div>
+      <div class="vblock"><div class="top"><div class="num">3</div><div class="name">DM 5 new followers daily.</div></div><p>Personal note. Not a pitch. <b>"Saw you followed — what brought you here?"</b> Builds the warmest list you'll ever own.</p></div>
+      <div class="vblock"><div class="top"><div class="num">4</div><div class="name">Comment on 5 bigger accounts daily.</div></div><p>Meaningful comments — not "great post 🔥". The comment section is the cheapest discovery loop on the internet right now.</p></div>
+    </div>
+
+    <div class="note">
+      <b>Posting time matters less than you think.</b> Post when you can reply. A 7am post you respond to beats a "perfect 9pm" post you ignore.
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 8 — CLONE YOURSELF ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 8 · CHAPTER 07</div><div class="pill">CLONE YOURSELF</div></div>
+  <div class="body">
+    <div class="page-eyebrow">you don't need an agency</div>
+    <div class="page-title">CLONE YOURSELF.</div>
+    <div class="page-sub">A system that runs on you, <span class="accent">without becoming you.</span></div>
+
+    <div class="section-label" style="margin-top:16px;">THE 4 ROLES YOU CLONE — IN THIS ORDER</div>
+    <div class="roles">
+      <div class="role">
+        <div class="top"><div class="num">1</div><div class="name">THE IDEATOR</div></div>
+        <p><b>This is you. Forever.</b> 30 minutes a week. Pull from the 5 buckets. Send voice memos. Never outsource opinion — only production.</p>
+      </div>
+      <div class="role">
+        <div class="top"><div class="num">2</div><div class="name">THE WRITER</div></div>
+        <p>Turns your voice memos into scripts using your hook formulas. A junior writer (or a tight AI prompt with your past 50 posts as voice training) does this in under an hour per video.</p>
+      </div>
+      <div class="role">
+        <div class="top"><div class="num">3</div><div class="name">THE EDITOR</div></div>
+        <p>Turns raw 5-take footage into ready-to-post videos. The single highest-leverage hire of your founder brand. Pay <b>well below an agency</b>, get <b>10x the speed.</b></p>
+      </div>
+      <div class="role">
+        <div class="top"><div class="num">4</div><div class="name">THE COMMUNITY MANAGER</div></div>
+        <p>Schedules posts, replies in first 60 mins (in your voice), routes hot DMs to you, qualifies leads. Last hire. Don't hire this until you have 10K followers and real DM volume.</p>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:18px;">WHEN TO HIRE EACH</div>
+    <div class="stages-line">
+      <div class="s"><b>0 → 5K FOLLOWERS</b>Do all 4 roles yourself. You're not too small to do it — you're too small to outsource it. Learn the work first, then delegate.</div>
+      <div class="s"><b>5K → 20K</b>Hire your first editor. Keep ideation, scripting, replying. The editor alone gives you 10 hours a week back.</div>
+      <div class="s"><b>20K+</b>Add the writer + community manager. Build a tight 3-person team. You stay the IDEATOR. <b>Forever.</b></div>
+    </div>
+
+    <div class="note" style="margin-top:18px;">
+      <b>The non-negotiable rule:</b> your team can produce. Your team cannot have an opinion. The moment your voice stops sounding like you, your founder brand stops being a moat — it becomes a content factory, and content factories die in 90 days.
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 9 — THE FUNNEL ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 9 · CHAPTER 08</div><div class="pill">THE FUNNEL</div></div>
+  <div class="body">
+    <div class="page-eyebrow">followers don't pay you</div>
+    <div class="page-title">THE FUNNEL DOES.</div>
+    <div class="page-sub">Build the path from <span class="accent">"who is this guy"</span> → <span class="accent">"shut up and take my money."</span></div>
+
+    <div class="funnel">
+      <div class="layer l1">AWARENESS<span class="sub">Reels · Shorts · TikTok — free, public, top-of-funnel</span></div>
+      <div class="layer l2">NURTURE<span class="sub">Stories · Lives · YouTube long-form — they get to know you</span></div>
+      <div class="layer l3">CAPTURE<span class="sub">Lead magnet (this PDF!) · DM keyword · Newsletter</span></div>
+      <div class="layer l4">CONVERT<span class="sub">DM conversation → call → close. Trust does the selling.</span></div>
+    </div>
+
+    <div class="section-label" style="margin-top:16px;">THE 6-SECOND PROFILE TEST</div>
+    <div class="check-list">
+      <div class="check"><div class="box"></div><div><b>Bio answers 3 things in 6 seconds:</b> what you do · who you do it for · what to do next.</div></div>
+      <div class="check"><div class="box"></div><div><b>3 pinned posts</b> = your 3 strongest proof posts. Result + face + clarity.</div></div>
+      <div class="check"><div class="box"></div><div><b>Highlights:</b> testimonials · behind the scenes · FAQs · process. Nothing else.</div></div>
+      <div class="check"><div class="box"></div><div><b>Link in bio:</b> ONE link, ONE action. Stop sending people to a buffet.</div></div>
+    </div>
+
+    <div class="section-label" style="margin-top:14px;">THE DM FUNNEL THAT PRINTS</div>
+    <div style="margin-top:8px; display:grid; grid-template-columns:repeat(5, 1fr); gap:6px; align-items:stretch;">
+      <div style="background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:8px; padding:10px; font-size:11px; text-align:center;"><b style="display:block; color:var(--blue); font-size:10px; letter-spacing:0.10em;">STEP 1</b>Comment on post</div>
+      <div style="background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:8px; padding:10px; font-size:11px; text-align:center;"><b style="display:block; color:var(--blue); font-size:10px; letter-spacing:0.10em;">STEP 2</b>DM keyword<br>(e.g. "PLAYBOOK")</div>
+      <div style="background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:8px; padding:10px; font-size:11px; text-align:center;"><b style="display:block; color:var(--blue); font-size:10px; letter-spacing:0.10em;">STEP 3</b>Auto-reply<br>with the magnet</div>
+      <div style="background:var(--blue-soft); border:1px solid var(--blue-line); border-radius:8px; padding:10px; font-size:11px; text-align:center;"><b style="display:block; color:var(--blue); font-size:10px; letter-spacing:0.10em;">STEP 4</b>Human follow-up<br>within 24 hrs</div>
+      <div style="background:var(--ink); color:#fff; border-radius:8px; padding:10px; font-size:11px; text-align:center;"><b style="display:block; color:#7aa3ff; font-size:10px; letter-spacing:0.10em;">STEP 5</b>Call booked<br>→ closed</div>
+    </div>
+
+    <div class="note" style="margin-top:14px;">
+      <b>The funnel rule:</b> never sell from a post. Sell from the DM. Posts build trust — the DM converts it. Founders who try to sell on the feed kill both.
+    </div>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+<!-- ============================ PAGE 10 — 0 → 10K IN 90 DAYS ============================ -->
+<section class="page">
+  <div class="top-bar"><div>PAGE 10 · CHAPTER 09 · THE BIG ONE</div><div class="pill">0 → 10K IN 90 DAYS</div></div>
+  <div class="body">
+    <div class="page-eyebrow">the closing chapter</div>
+    <div class="page-title">0 → 10K · 90 DAYS.</div>
+    <div class="page-sub">The exact 12-week system. <span class="accent">No fluff. No theory.</span></div>
+
+    <div class="timeline-3">
+      <div class="tl-card">
+        <div class="hd">DAYS 1–30</div>
+        <div class="name">FOUNDATION</div>
+        <ul>
+          <li><b>W1:</b> Lock your positioning statement (page 3). One sentence. Pinned everywhere.</li>
+          <li><b>W2:</b> Fill your 5 idea buckets with <b>50 raw ideas</b> (page 4). Don't filter yet.</li>
+          <li><b>W3:</b> Ship <b>5 videos.</b> Rough is fine. The goal is reps, not perfection.</li>
+          <li><b>W4:</b> Look at the data. Refine hooks based on what got watched, not what you liked.</li>
+        </ul>
+        <div class="goal">GOAL: <span class="accent">1K followers · 10 inbound leads.</span></div>
+      </div>
+      <div class="tl-card">
+        <div class="hd">DAYS 31–60</div>
+        <div class="name">VOLUME</div>
+        <ul>
+          <li><b>5 videos / week</b> non-negotiable. Batch on Sundays.</li>
+          <li><b>Add LinkedIn + X.</b> Top 3 reels every week, repurposed.</li>
+          <li><b>Hire your editor.</b> First and only hire at this stage.</li>
+          <li><b>Launch a free lead magnet</b> (a PDF like this one). DM keyword to claim.</li>
+        </ul>
+        <div class="goal">GOAL: <span class="accent">5K followers · 100 leads · 10 calls booked.</span></div>
+      </div>
+      <div class="tl-card">
+        <div class="hd">DAYS 61–90</div>
+        <div class="name">COMPOUND</div>
+        <ul>
+          <li><b>Go on 5 podcasts</b> in your niche. Borrow rooms before you build them.</li>
+          <li><b>Run paid amplification</b> on your 3 best-performing organic videos.</li>
+          <li><b>Start a small founder community</b> — DM group, cohort, or paid mastermind.</li>
+          <li><b>Move 10 leads</b> through the funnel. DM → call → close.</li>
+        </ul>
+        <div class="goal">GOAL: <span class="accent">10K followers · first $30K+ inbound revenue.</span></div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:16px;">YOUR DAILY 60-MIN FOUNDER STACK</div>
+    <div class="check-list" style="grid-template-columns:1fr 1fr; display:grid; gap:6px;">
+      <div class="check"><div class="box"></div><div><b>10 mins:</b> test 1 new hook. Voice memo it.</div></div>
+      <div class="check"><div class="box"></div><div><b>15 mins:</b> reply to every comment from yesterday's post.</div></div>
+      <div class="check"><div class="box"></div><div><b>15 mins:</b> DM 5 new followers a personal note (no pitch).</div></div>
+      <div class="check"><div class="box"></div><div><b>10 mins:</b> meaningful comments on 5 bigger accounts.</div></div>
+      <div class="check"><div class="box"></div><div><b>10 mins:</b> voice memo 1 idea for tomorrow.</div></div>
+      <div class="check" style="background:var(--ink); color:#fff; border-color:var(--ink);"><div class="box" style="border-color:#7aa3ff;"></div><div><b style="color:#7aa3ff;">Repeat for 90 days.</b> That's the whole game.</div></div>
+    </div>
+
+    <a class="cta-btn" href="https://instagram.com/smmguy">DM ME "PLAYBOOK" →<span class="small">@SMMGUY · LET'S BUILD YOUR FOUNDER BRAND</span></a>
+  </div>
+  <div class="bottom-bar"><a href="https://instagram.com/smmguy">@SMMGUY</a></div>
+</section>
+
+</body>
+</html>

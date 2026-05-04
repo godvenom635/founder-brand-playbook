@@ -1,0 +1,14 @@
+# Subscriber list (PHP version writes here — never commit)
+subscribers.csv
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor junk
+.vscode/
+.idea/
+*.swp
+
+# Local dev logs
+*.log
