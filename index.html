@@ -2,23 +2,11 @@
 <!--
   ============================================================
   The Founder-led Personal Brand Playbook — landing page
-  by @smmguy · static version (GitHub Pages compatible)
-  ============================================================
+  by @smmguy · static version (GitHub Pages ready)
 
-  EMAIL CAPTURE:
-  This file is wired for Web3Forms (free, unlimited submissions).
-
-  → 1-minute setup:
-     1. Go to https://web3forms.com → enter your email → copy the access key
-     2. Replace YOUR_WEB3FORMS_ACCESS_KEY below with that key
-     3. Done. Submissions land in your inbox + their dashboard.
-
-  Alternatives: Formspree (formspree.io), Tally (tally.so), Getform.
-  Just swap the FORM_ENDPOINT + payload field names in the JS at the bottom.
-
-  PREFER A NO-CODE LEAD MAGNET TOOL (Superprofile / Stan / Beacons)?
-  Replace the <form> in both places with a single <a> button linking
-  to your Superprofile lead-magnet URL. See README.md.
+  Email capture is handled by Superprofile.
+  All "GET THE PLAYBOOK" CTAs link to https://superprofile.bio/smmguy
+  Subscribers + downloads are visible in your Superprofile dashboard.
   ============================================================
 -->
 <html lang="en">
@@ -168,6 +156,34 @@
     letter-spacing:0.04em;
   }
   .form-meta b{color:var(--ink); font-weight:700;}
+
+  /* ============== SUPERPROFILE CTA BUTTON ============== */
+  .sp-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    background:var(--blue); color:#fff;
+    border:0; border-radius:12px;
+    padding:18px 36px;
+    font-family:inherit; font-weight:800;
+    font-size:15px; letter-spacing:0.10em;
+    width:100%; max-width:520px;
+    box-shadow:0 12px 30px rgba(29,78,216,.28);
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .sp-btn:hover{
+    background:var(--deep-blue);
+    transform:translateY(-2px);
+    box-shadow:0 16px 40px rgba(29,78,216,.36);
+  }
+  .sp-btn .arr{font-size:18px; transition:transform .18s ease;}
+  .sp-btn:hover .arr{transform:translateX(3px);}
+  .sp-btn.on-dark{
+    background:#fff; color:var(--ink);
+    box-shadow:0 14px 36px rgba(0,0,0,.25);
+  }
+  .sp-btn.on-dark:hover{
+    background:#fff; color:var(--blue);
+    transform:translateY(-2px);
+  }
 
   .err{
     margin-top:10px; color:#b91c1c; font-size:13px; font-weight:600;
@@ -431,7 +447,7 @@
 <nav class="top">
   <div class="inner">
     <div class="brand"><span class="at">@</span>SMMGUY</div>
-    <a class="cta" href="#get">GET THE PLAYBOOK →</a>
+    <a class="cta" href="https://superprofile.bio/smmguy" target="_blank" rel="noopener">GET THE PLAYBOOK →</a>
   </div>
 </nav>
 
@@ -449,13 +465,11 @@
       How founders build a personal brand in 2026 — and turn their face into <span class="accent">their business's cheapest distribution channel.</span> No fluff. No theory. The exact system.
     </p>
 
-    <div class="form-wrap" data-form-zone="top">
-      <form class="capture js-form">
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <button type="submit">SEND IT TO ME →</button>
-      </form>
-      <div class="err js-err" hidden></div>
-      <div class="form-meta"><b>Instant download.</b> No spam. Unsubscribe anytime.</div>
+    <div class="form-wrap">
+      <a class="sp-btn" href="https://superprofile.bio/smmguy" target="_blank" rel="noopener">
+        GET THE PLAYBOOK <span class="arr">→</span>
+      </a>
+      <div class="form-meta"><b>Free · Instant access.</b> Delivered via Superprofile.</div>
     </div>
 
     <div class="trust-row">
@@ -607,13 +621,11 @@
     <h2>GET THE PLAYBOOK.</h2>
     <div class="h-sub">The exact system to build a founder-led brand in 2026.</div>
 
-    <div class="form-wrap" data-form-zone="bottom" data-success-light="1">
-      <form class="capture js-form">
-        <input type="email" name="email" placeholder="your@email.com" required>
-        <button type="submit">SEND IT TO ME →</button>
-      </form>
-      <div class="err js-err" hidden style="color:#fecaca;"></div>
-      <div class="form-meta"><b style="color:#fff;">Instant download.</b> No spam. Unsubscribe anytime.</div>
+    <div class="form-wrap">
+      <a class="sp-btn on-dark" href="https://superprofile.bio/smmguy" target="_blank" rel="noopener">
+        GET THE PLAYBOOK <span class="arr">→</span>
+      </a>
+      <div class="form-meta"><b style="color:#fff;">Free · Instant access.</b> Delivered via Superprofile.</div>
     </div>
   </div>
 </section>
@@ -624,79 +636,8 @@
 </footer>
 
 <script>
-  // ============================================================
-  // CONFIG — paste your Web3Forms access key here.
-  // Get one free at https://web3forms.com (no signup wall, instant key).
-  // ============================================================
-  const ACCESS_KEY  = 'YOUR_WEB3FORMS_ACCESS_KEY';
-  const ENDPOINT    = 'https://api.web3forms.com/submit';
-  const PDF_URL     = 'playbook.pdf';
-  // ============================================================
-
+  // Year for footer
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  function renderSuccess(zoneEl){
-    const isLight = zoneEl.dataset.successLight === '1';
-    zoneEl.innerHTML = `
-      <div class="success-card" ${isLight ? 'style="background:#fff;color:var(--ink);"' : ''}>
-        <div class="check">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12.5l4.5 4.5L19 7" stroke="#fff" stroke-width="3"
-                  stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3 ${isLight ? 'style="color:var(--ink);"' : ''}>You're in.</h3>
-        <p ${isLight ? 'style="color:var(--muted);"' : ''}>The playbook is yours. Tap below to download instantly.</p>
-        <a class="download" href="${PDF_URL}" download>DOWNLOAD THE PLAYBOOK ↓</a>
-      </div>`;
-    // auto-trigger download after 600ms for the friendliest UX
-    setTimeout(() => {
-      const a = document.createElement('a');
-      a.href = PDF_URL; a.download = '';
-      document.body.appendChild(a); a.click(); a.remove();
-    }, 600);
-  }
-
-  document.querySelectorAll('form.js-form').forEach(form => {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const zone   = form.closest('[data-form-zone]');
-      const errEl  = zone.querySelector('.js-err');
-      const btn    = form.querySelector('button');
-      const email  = form.querySelector('input[name=email]').value.trim();
-      errEl.hidden = true;
-
-      if (!ACCESS_KEY || ACCESS_KEY === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-        // Dev mode — no key configured. Skip API, go straight to success.
-        renderSuccess(zone); return;
-      }
-
-      btn.disabled = true; btn.textContent = 'SENDING…';
-      try {
-        const res = await fetch(ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
-          body: JSON.stringify({
-            access_key: ACCESS_KEY,
-            email: email,
-            subject: 'New playbook download — @smmguy',
-            from_name: 'Founder Playbook landing',
-            page: location.href
-          })
-        });
-        const data = await res.json();
-        if (data.success) {
-          renderSuccess(zone);
-        } else {
-          throw new Error(data.message || 'Something went wrong.');
-        }
-      } catch (err) {
-        errEl.textContent = err.message || 'That didn\'t go through. Try again?';
-        errEl.hidden = false;
-        btn.disabled = false; btn.textContent = 'SEND IT TO ME →';
-      }
-    });
-  });
 </script>
 </body>
 </html>
