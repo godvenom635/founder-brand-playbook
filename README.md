@@ -20,44 +20,21 @@ By **[@smmguy](https://instagram.com/smmguy)**.
 
 ## Where do the emails go?
 
-You have **three options**, ranked simplest → most flexible:
+**This site uses [Superprofile](https://superprofile.bio/smmguy) for email capture and PDF delivery.**
 
-### Option 1 — **Superprofile** (or Stan / Beacons / Tally) — *no code, fastest*
-Use your existing Superprofile lead-magnet feature. Skip the form on this site entirely:
-1. In Superprofile, create a "Free Lead Magnet" → upload `playbook.pdf` → set email-required
-2. Copy the public Superprofile URL
-3. In `index.html`, replace **both** `<form class="capture js-form">…</form>` blocks with a single button:
-   ```html
-   <a class="download" href="https://yoursuperprofile.link/playbook">GET THE PLAYBOOK →</a>
-   ```
-4. Emails land in your **Superprofile dashboard** — full subscriber list, exportable.
+Every "GET THE PLAYBOOK" button on the page links to:
+```
+https://superprofile.bio/smmguy
+```
 
-> **Pros:** zero setup, hosted dashboard, native CRM features, built-in email delivery.
-> **Cons:** less brand control on the capture step.
+When a visitor clicks → Superprofile collects their email → delivers the PDF.
+Your subscriber list + analytics live in the **Superprofile dashboard** — fully exportable.
 
-### Option 2 — **Web3Forms** (default in this repo) — *free, unlimited, 1-min setup*
-The form in `index.html` is already wired for Web3Forms. To activate:
-1. Go to **[web3forms.com](https://web3forms.com)** → enter your email → instantly get an access key
-2. Open `index.html`, find this line near the bottom:
-   ```js
-   const ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
-   ```
-3. Paste your key. That's it.
-4. Submissions land in **your inbox** + the Web3Forms dashboard (web3forms.com/dashboard).
+To change the destination URL, search-and-replace `https://superprofile.bio/smmguy` in `index.html` (it appears in 3 places: nav button, hero CTA, final CTA).
 
-> **Pros:** unlimited submissions free, no spam protection limits, no signup wall.
-> **Cons:** basic dashboard — no segmentation/automations.
-
-### Option 3 — **Self-hosted on PHP** (using `index.php`)
-If you host on Hostinger / SiteGround / any cPanel host with PHP:
-1. Upload the whole folder via FTP / file manager
-2. Make sure the directory is writable (`chmod 755`) so PHP can create `subscribers.csv`
-3. Emails saved to `subscribers.csv` in the same folder — download anytime via FTP
-
-> **Pros:** you own the data fully, no third party.
-> **Cons:** requires a PHP host (not GitHub Pages), no email notifications by default.
-
-**Other free swaps for the form:** [Formspree](https://formspree.io) (50/mo free), [Tally](https://tally.so) (unlimited free), [Getform](https://getform.io). All use the same `<form action="…">` pattern — just change the endpoint and field names.
+### Want to swap to a different provider?
+- **Direct email capture on this page** — see `index.php` (uses PHP + writes to `subscribers.csv`), or wire any of [Formspree](https://formspree.io), [Web3Forms](https://web3forms.com), [Tally](https://tally.so) into the buttons
+- **Self-host on PHP** — use `index.php` instead of `index.html` on Hostinger / SiteGround / any cPanel host. Emails saved to `subscribers.csv` in the same folder.
 
 ---
 
